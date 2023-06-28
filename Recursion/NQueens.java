@@ -1,6 +1,6 @@
 public class NQueens {
     public static void main(String[] args) {
-        int n = 5;
+        int n = 3;
         boolean[][] board = new boolean[n][n];
         System.out.println(queens(board, 0));
     }
@@ -27,7 +27,7 @@ public class NQueens {
     private static boolean isSafe(boolean[][] board, int r, int c) {
         //vertical above check
         for (int i = 0; i < r; i++) {
-            if (board[i][c]) {
+            if (board[i][c]){
                 return false;
             }
         }
