@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class DiceCombination {
     public static void main(String[] args){
         
-        // dice("", 6);
+         dice("", 6);
 
-        System.out.println(diceRet("", 4));
+//        System.out.println(diceRet("", 4));
     }
 
     static void dice(String p, int target){

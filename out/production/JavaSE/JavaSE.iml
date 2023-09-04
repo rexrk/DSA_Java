@@ -6,7 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BinarySearch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Recursion" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/String" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

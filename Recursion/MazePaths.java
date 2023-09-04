@@ -7,7 +7,7 @@ class MazePaths {
 //        path("", 3, 3);
 
         //2nd Method
-//        System.out.println(pathString("", 3, 3)); //2.
+//        System.out.println(pathString("", 3, 3));
 
         //3rd Method
 //        allPaths("", 3, 3);
@@ -27,11 +27,11 @@ class MazePaths {
 //        allDirections("", 3, 3);
 
         //5th Method (with backtrack)
-//        allDirections("", 0, 0, board);
+        allDirections("", 0, 0, board);
 
         //6th Method (printing path in matrix)
-        int[][] path = new int[board.length][board.length];
-        allDirections(board, 0, 0, path, 1);
+//        int[][] path = new int[board.length][board.length];
+//        allDirections(board, 0, 0, path, 1);
 
     }
 
@@ -149,7 +149,7 @@ class MazePaths {
 
     static void allDirections(String p, int r, int c, boolean[][] board) {
         if (r == board.length - 1 && c == board[r].length - 1) {
-            System.out.println("[ " + p + " ]");
+            System.out.println();
             return;
         }
 
@@ -158,15 +158,19 @@ class MazePaths {
         board[r][c] = false;
 
         if (r < board.length - 1) {
+            System.out.println("D");
             allDirections(p + "D", r + 1, c, board);
         }
         if (c < board[r].length - 1) {
+            System.out.println("R");
             allDirections(p + "R", r, c + 1, board);
         }
         if (r > 0) {
+            System.out.println("U");
             allDirections(p + "U", r - 1, c, board);
         }
         if (c > 0) {
+            System.out.println("L");
             allDirections(p + "L", r, c - 1, board);
         }
 

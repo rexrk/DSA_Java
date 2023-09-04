@@ -10,8 +10,8 @@ public class arrays {
         // linear Search
         // System.out.println(linearSearch(nums, 7, 0));
 
-        // return linear occurances in arraylist
-        // System.out.println(linearOccurance(nums, 3, 0));
+        // return linear occurrences in arraylist
+        // System.out.println(linearOccurrence(nums, 3, 0));
 
         // Binary Search in rotated array
         System.out.println(binaryInRtddArray(nums, 74, 0, nums.length - 1));
