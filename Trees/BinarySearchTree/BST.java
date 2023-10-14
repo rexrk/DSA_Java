@@ -1,6 +1,5 @@
 package Trees.BinarySearchTree;
 
-import java.awt.geom.QuadCurve2D;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,6 +16,41 @@ public class BST {
     }
 
     private Node root;
+    public String serialize() {
+        return serialize(root);
+    }
+    private String serialize(Node root) {
+        if(root == null) return null;
+        StringBuilder sb = new StringBuilder();
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while(!queue.isEmpty()) {
+
+            Node node = queue.poll();
+            sb.append(node.val).append(",");
+
+            if(node.left != null) {
+                queue.offer(node.left);
+            } else {
+                sb.append(" ,");
+            }
+
+            if(node.right != null) {
+                queue.offer(node.right);
+            } else {
+                sb.append(" ,");
+            }
+
+        }
+
+        return sb.toString();
+
+    }
+    public void Deserialize(String s) {
+
+    }
 
     public void insert(int val) {
         root = insert(val, root);
@@ -41,7 +75,6 @@ public class BST {
         return node;
 
     }
-
 
     public void display() {
         display(root, 0);
