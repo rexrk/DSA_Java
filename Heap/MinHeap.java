@@ -10,6 +10,9 @@ public class MinHeap<T extends Comparable<T>> {
         list = new ArrayList<>();
     }
 
+    public int size() {
+        return list.size();
+    }
     private void swap(int i, int j) {
         T temp = list.get(i);
         list.set(i, list.get(j));
@@ -17,7 +20,7 @@ public class MinHeap<T extends Comparable<T>> {
     }
 
     private int parent(int child) {
-        return (child - 1) * 2;
+        return (child - 1) / 2;
     }
 
     private int leftChild(int parent) {
@@ -28,23 +31,66 @@ public class MinHeap<T extends Comparable<T>> {
         return parent * 2 + 2;
     }
 
-    public void insert(T item) {
-        list.add(item);
-        uphead(list.size() - 1);
+    public void insert(T t) {
+        list.add(t);
+        upHeap(list.size()-1);
     }
 
-    private void uphead(int index) {
+    private void upHeap(int index) {
         if(index == 0) return;
+        int p = parent(index);
 
-        int parent = parent(index);
-        if(list.get(index).compareTo(list.get(parent)) < 0) {
-            swap(index, parent);
-            uphead(parent);
+        if(list.get(index).compareTo(list.get(p)) < 0) {
+            swap(p, index);
+            upHeap(p);
         }
+
     }
 
-    public T getMin() {
-        return list.get(0);
+    public T remove() throws Exception {
+        if(list.isEmpty()) {
+            throw new Exception("List is Empty");
+        }
+
+        T deleted = list.getFirst();
+        T temp = list.removeLast();
+        if(!list.isEmpty()) {
+            list.set(0, temp);
+            downHeap(0);
+        }
+        return deleted;
+    }
+    private void downHeap(int index) {
+        int min = index;
+        int left = leftChild(index);
+        int right = rightChild(index);
+
+        if(left < list.size() && list.get(min).compareTo(list.get(left)) > 0){
+            min = left;
+        }
+        if(right < list.size() && list.get(min).compareTo(list.get(right)) > 0) {
+            min = right;
+        }
+
+        if(index != min) {
+            swap(index, min);
+            downHeap(min);
+        }
+
     }
 
+    public ArrayList<T> heapSort() throws Exception {
+        ArrayList<T> data = new ArrayList<>();
+        while(!list.isEmpty()) {
+            data.add(this.remove());
+        }
+        return data;
+    }
+
+    @Override
+    public String toString() {
+        return "MinHeap{" +
+                "list=" + list +
+                '}';
+    }
 }

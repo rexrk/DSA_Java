@@ -1,9 +1,8 @@
 package LinkedInAssess;
 
 public class Test {
-    private final int y;
-
-    public Test() {
-        this.y = 23;
+    public static void main(String[] args) {
+        int Integer = 24;
+        int String = 12;
     }
 }

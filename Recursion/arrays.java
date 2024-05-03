@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class arrays {
     public static void main(String[] args) {
-        int[] nums = { 5, 6, 7, 0, 1, 2, 3, 4 };
+        int[] nums = { 5, 6, 6, 7, 0, 1, 2, 3, 4 };
 
         // is Sorted or not
         // System.out.println(isSorted(nums, 0));

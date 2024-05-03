@@ -1,13 +1,20 @@
 package Heap;
 
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         MinHeap<Integer> heap = new MinHeap<>();
-        heap.insert(1);
-        heap.insert(5);
-        heap.insert(7);
-        heap.insert(2);
-        heap.insert(4);
-        System.out.println(heap.getMin());
+        heap.insert(20);
+        heap.insert(22);
+        heap.insert(51);
+        heap.insert(42);
+        heap.insert(12);
+        heap.insert(3);
+        heap.remove();
+
+        ArrayList<Integer> data = heap.heapSort();
+        data.forEach(System.out::println);
+
     }
 }

@@ -10,6 +10,7 @@ public class HashMapDemo {
         map.put(2, "Bhargavi");
         map.put(3, "wuv");
 
+        System.out.println(map);
 
     }
 }

@@ -19,7 +19,7 @@ public class BigIntegerDemo {
         BigInteger o = BigInteger.valueOf(123456789);
 
         //BigInteger from String
-        BigInteger st = new BigInteger("299999999999999999999999999");
+        BigInteger st = new BigInteger("2999999999999999999999999999999999999999");
         BigInteger str = BigInteger.valueOf(Long.parseLong("171205712057591"));
         System.out.println(st.add(str));
 
